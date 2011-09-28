@@ -19,7 +19,7 @@ It is meant for development purposes only.
 - Batch AJAX request processing.
 - Reference previous items in a batch: {{{responses.0.author}}}
 - Placeholders in your json for automatically assigned identifiers: \_\_\_id\_\_\_
-- Sample client in CoffeeScript or JavaScript.
+- Sample client in CoffeeScript (see Django version for JS code, or just view the emitted source in your browser).
 
 **What's the catch?**
 
