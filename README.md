@@ -1,6 +1,6 @@
 **What is it?**
 
-- MorePi (Mock Rest API) is a simple dynamic RESTful API in Django with server-side in-memory storage.
+- MorePi (Mock Rest API) is a simple dynamic RESTful API in Rails with server-side in-memory storage.
 It is meant for development purposes only.
 - The Rails version was adapted from the Django version. I can't promise 100% rubyesque-ness.
 
@@ -23,14 +23,14 @@ It is meant for development purposes only.
 
 **What's the catch?**
 
-- It's all in memory. Restart Django and the data goes away. Keep all of your good test data in your initialization script.
+- It's all in memory. Restart the Rails server and the data goes away. Keep all of your good test data in your initialization script.
 - It's not for production use. It's just a way to postpone building out your back end until you feel good about your client functionality.
 
 **How do I use it?**
 
 - See the sample application to get a feel for how to use it.
-- Add the morepi package to your Django site.
-- Add a reference to morepi.urls in your application's main urls.py: (r'^api/0.0/', include('morepi.urls'))
+- Add the morepi controller to your Rails site.
+- Add a reference to morepi in your application's routes.rb: match '/api/0.0(/*path)', :to => 'morepi#api'
 - Add a reference to batchjax.js in your HTML if you want to use the batching functionality.
 - Paths should be something like /api/0.0/books/ to access a collection and /api/0.0/books/1/ to access an item.
 - Set $.bjax.batchPath to whatever you want the path to your mock API to be (default is /api/0.0/)
@@ -53,7 +53,7 @@ It is meant for development purposes only.
 **What are the dependencies?**
 
 - Batchjax: jQuery. Only tested on 1.6+
-- MorePi: Django 1.3+, simplejson
+- MorePi: Rails 3.1
 
 **What's the license?**
 
