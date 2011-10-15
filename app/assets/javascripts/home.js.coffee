@@ -373,17 +373,8 @@ App.resetView = () ->
   App.getBooksList()
 
 
-App.ajaxSetup = () ->
-  $.ajaxSetup({
-    beforeSend: (xhr, settings) ->
-      if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url)))
-        csrf = $("input[name=csrfmiddlewaretoken]").val()
-        if csrf? then xhr.setRequestHeader("X-CSRFToken", csrf)
-  })
-
-
 App.init = () ->
-  App.ajaxSetup()
+  #App.ajaxSetup() #Rails UJS covers this
   App.loadMustacheTemplates(App.templates)
   
   $(document.body)
